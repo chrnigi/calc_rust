@@ -1,7 +1,9 @@
 mod calc;
 fn main() {
-    let x = 3.2;
+    let mut x = 3.2;
+    println!("{}", x);
     let y = 3.4;
-    let z = calc::add_f64(&x, &y);
-    println!("{} + {} = {}", x, y, z);
+    calc::add_mut_f64(&mut x, &y);
+    println!("{}", x);
+
 }

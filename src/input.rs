@@ -6,6 +6,6 @@ pub fn num_in() -> f64 {
     io::stdin()
         .read_line(&mut input)
         .expect("Invalid number!");
-    let input: f64 = input.trim().parse().expect("Failed parse!");
+    let input = input.trim().parse::<f64>().expect("Failed parse!");
     return input;
 }

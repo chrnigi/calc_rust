@@ -1,8 +1,11 @@
+use std::io;
 mod calc;
+mod input;
+
 fn main() {
-    let mut x = 3.2;
+    let mut x = 0.0;
     println!("{}", x);
-    let y = 3.4;
+    let y = input::num_in();
     calc::add_mut_f64(&mut x, &y);
     println!("{}", x);
 

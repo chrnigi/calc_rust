@@ -1,7 +1,0 @@
-use std::io;
-
-pub fn num_input() -> f64 {
-    let mut input: String = String::new();
-    
-    
-}

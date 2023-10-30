@@ -1,5 +1,6 @@
 use std::io;
-use scanf::sscanf;
+//use std::io::prelude::*;
+//use regex::Regex;
 
 pub struct UserIn {
     pub operator: char,
@@ -7,17 +8,24 @@ pub struct UserIn {
 }
 
 pub fn num_in() -> UserIn {
-    let mut input: String = String::new();
-    
+    let mut input_op: String = String::new();
 
-    let mut temp_op: char = '0';
-    let mut temp_num: f64 = 0.0;
+    let temp_op: char;
+    let temp_num: f64;
     io::stdin()
-        .read_line(&mut input)
-        .expect("Invalid number!");
-    sscanf!(&input, "{} {}", temp_op, temp_num);
-    //let input = input.trim().parse::<f64>().expect("Failed parse!");
-    let user_input = UserIn { operator: temp_op, operand: temp_num };
+        .read_line(&mut input_op)
+        .expect("Invalid input!");
+    
+    temp_op = input_op[0..1].trim().parse::<char>().expect("Failed parse!");
+    if temp_op == 'q' {
+        temp_num = 0.0;
+    } else {
+        temp_num = input_op[1..input_op.len()].trim().parse::<f64>().expect("Failed parse!");
+    }
+   
+    
+    
+    let user_input = UserIn { operator: temp_op, operand: temp_num};
     
     return user_input;
 }

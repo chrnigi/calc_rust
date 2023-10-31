@@ -1,5 +1,3 @@
-
-
 mod calc;
 mod input;
 

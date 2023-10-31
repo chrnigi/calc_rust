@@ -1,0 +1,5 @@
+pub fn scan_data() -> UserIn {
+
+    let re = regex::Regex::new(r"(?<operator>.)s*(?<operand>[0-9]+\.?[0-9]*)").unwrap();
+    
+}

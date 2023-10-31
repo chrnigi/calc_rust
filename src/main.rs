@@ -1,5 +1,4 @@
 mod calc;
-mod input;
 mod regex_input;
 
 fn main() {

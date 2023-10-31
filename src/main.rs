@@ -1,14 +1,17 @@
 mod calc;
 mod input;
+mod regex_input;
 
 fn main() {
     let mut cur_res: f64 = 0.0;
-    let mut user_input: input::UserIn;
+    //let mut user_input: input::UserIn;
+    let mut user_input: regex_input::UserIn;
     
     println!("Current result: {:.3}", cur_res);
 
     loop {
-        user_input = input::num_in();
+        //user_input = input::num_in();
+        user_input = regex_input::scan_data();
             
         if user_input.operator == 'q' {
             break;

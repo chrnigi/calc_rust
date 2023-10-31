@@ -1,5 +1,6 @@
 
-use crate::input::UserIn;
+//use crate::input::UserIn;
+use crate::regex_input::UserIn;
 
 fn add_mut_f64(num_1: &mut f64, num_2: &f64) {
     *num_1 = *num_1 + *num_2;

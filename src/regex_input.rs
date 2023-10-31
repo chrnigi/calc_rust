@@ -23,14 +23,16 @@ pub fn scan_data() -> UserIn {
     
     op = caps.name("operator").unwrap().as_str().parse::<char>().unwrap_or('+');
 
-    if input.len() > 4 {
-        match op {
-            'q' => num = 0.0,
-            _ => num = caps.name("operand").map_or("", |m| m.as_str()).parse::<f64>().unwrap_or(0.0),
-        }
-    } else {
-        num = 0.0;
+    
+    match op {
+        'q' => num = 0.0,
+        '#' => num = 0.0,
+        '!' => num = 0.0,
+        '%' => num = 0.0,
+        _ => num = caps.name("operand").map_or("", |m| m.as_str()).parse::<f64>().unwrap_or(0.0),
     }
+
+ 
 
     let user_input = UserIn {
         operator: op,

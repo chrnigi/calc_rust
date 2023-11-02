@@ -40,8 +40,6 @@ pub fn scan_data() -> UserIn {
         _ => num = caps.name("operand").map_or("", |m| m.as_str()).parse::<f64>().unwrap_or(0.0),
     }
 
- 
-
     let user_input = UserIn {
         operator: op,
         operand: num,
